@@ -13,12 +13,12 @@
 @keyframes fade-in {
   0% {
     top: 100%;
-    left: -50vw;
+    left: 50%;
     opacity: 0;
   }
 
   50% {
-    opacity: 1;
+    // opacity: 1;
   }
 
   100% {

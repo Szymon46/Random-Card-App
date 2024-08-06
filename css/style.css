@@ -1,17 +1,9 @@
 @media (width > 576px) {
-  .board__img {
-    width: 120px;
-    margin: 5px;
-  }
   .start-btn {
     font-size: 2.5rem;
   }
 }
 @media (width > 768px) {
-  .board__img {
-    width: 18%;
-    margin: 5px;
-  }
   .start-btn {
     font-size: 3rem;
   }
@@ -22,9 +14,6 @@
   }
 }
 @media (width > 1200px) {
-  img.board__img {
-    width: 15%;
-  }
   .start-btn {
     font-size: 3rem;
   }
@@ -42,11 +31,8 @@
 @keyframes fade-in {
   0% {
     top: 100%;
-    left: -50vw;
+    left: 50%;
     opacity: 0;
-  }
-  50% {
-    opacity: 1;
   }
   100% {
     top: 0;
@@ -72,23 +58,29 @@ body {
   height: 100vh;
   position: relative;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.img {
+  opacity: 0;
 }
 
 .board {
   height: 100vh;
   width: 100%;
-  display: flex;
-  justify-content: space-around;
-  align-items: flex-start;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  justify-items: center;
 }
 .board__img {
+  position: relative;
   opacity: 0;
-  width: 100px;
-  margin: 10px;
+  width: 80%;
+  margin: 5px;
   animation-duration: 1s;
   animation-fill-mode: forwards;
-  position: relative;
 }
 
 .start-btn {

@@ -1,0 +1,29 @@
+@keyframes fade-out {
+  from {
+    opacity: 1;
+    display: block;
+  }
+
+  to {
+    opacity: 0;
+    display: none;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    top: 100%;
+    left: -50vw;
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    top: 0;
+    left: 0;
+    opacity: 1;
+  }
+}

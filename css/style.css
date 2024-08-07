@@ -40,6 +40,15 @@
     opacity: 1;
   }
 }
+@keyframes slide {
+  0% {
+    top: 0;
+  }
+  50% {
+    top: 50%;
+    opacity: 1;
+  }
+}
 * {
   margin: 0;
   padding: 0;

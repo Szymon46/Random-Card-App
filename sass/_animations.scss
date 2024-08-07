@@ -27,3 +27,17 @@
     opacity: 1;
   }
 }
+
+@keyframes slide {
+  0% {
+    top: 0;
+  }
+
+  50% {
+    top: 50%;
+    opacity: 1;
+  }
+  // 60% {
+  //   opacity: 0;
+  // }
+}

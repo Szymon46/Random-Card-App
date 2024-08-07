@@ -8,7 +8,7 @@
 }
 
 body {
-  background-color: hsl(115, 72%, 17%);
+  background-color: hsl(115, 72%, 23%);
   font-size: 62.5%;
 }
 
@@ -85,7 +85,7 @@ body {
   left: 50%;
   bottom: 30%;
   transform: translateX(-50%);
-  animation-duration: 1s;
+  animation-duration: 0.5s;
   animation-fill-mode: forwards;
   cursor: pointer;
 }

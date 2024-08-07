@@ -14,8 +14,13 @@ function startApp() {
 }
 function handleCard(item) {
     if (listen) {
+        listen = false;
         item.style.animationDelay = "0s";
-        item.style.animationName = "slide";
+        item.style.animationName = "slide-out";
+        setTimeout(() => {
+            item.setAttribute("src", `./img/${Math.floor(Math.random() * 13 + 1)}.png`);
+            item.style.animationName = "slide-in";
+        }, 500);
     }
 }
 startBtn.addEventListener("click", startApp);

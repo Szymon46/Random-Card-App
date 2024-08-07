@@ -102,19 +102,46 @@
   }
 }
 
-@keyframes slide {
+@keyframes slide-out {
   0% {
     top: 0;
+    opacity: 1;
   }
 
   50% {
+    transform: translateX(-50%);
     top: 50%;
+    left: 50%;
     opacity: 1;
   }
   60% {
     opacity: 0;
   }
-  70% {
+  100% {
+    transform: translateX(-50%);
+    top: 50%;
+    left: 50%;
     opacity: 0;
+  }
+}
+
+@keyframes slide-in {
+  0% {
+    transform: translateX(-50%);
+    top: 50%;
+    left: 50%;
+    opacity: 0;
+  }
+  20% {
+    transform: translateX(-50%);
+    top: 50%;
+    left: 50%;
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-50%);
+    top: 50%;
+    left: 50%;
+    opacity: 1;
   }
 }

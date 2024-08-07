@@ -1,3 +1,5 @@
+@use "sass:math";
+
 @keyframes fade-out {
   from {
     opacity: 1;
@@ -10,7 +12,7 @@
   }
 }
 
-@keyframes fade-in {
+@keyframes fade-in1 {
   0% {
     top: 100%;
     left: 50%;
@@ -18,12 +20,84 @@
   }
 
   50% {
-    // opacity: 1;
+    opacity: 1;
   }
 
   100% {
     top: 0;
     left: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in2 {
+  0% {
+    top: 100%;
+    left: 50%;
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    top: 0%;
+    left: 20%;
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in3 {
+  0% {
+    top: 100%;
+    left: 50%;
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    top: 0;
+    left: 40%;
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in4 {
+  0% {
+    top: 100%;
+    left: 50%;
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    top: 0;
+    left: 60%;
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in5 {
+  0% {
+    top: 100%;
+    left: 50%;
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    top: 0;
+    left: 80%;
     opacity: 1;
   }
 }
@@ -37,7 +111,10 @@
     top: 50%;
     opacity: 1;
   }
-  // 60% {
-  //   opacity: 0;
-  // }
+  60% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 0;
+  }
 }

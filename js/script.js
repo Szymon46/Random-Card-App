@@ -1,4 +1,9 @@
 "use strict";
+/*
+ * TODO
+ * Do the animation of card flipping when clicked.
+ * Make the reset button.
+ */
 const startBtn = document.querySelector(".start-btn");
 const images = document.querySelectorAll(".img");
 let listen = true;
@@ -8,13 +13,21 @@ function startApp() {
     images.forEach((item) => {
         item.style.animationDelay = `${i}s`;
         item.style.animationName = `fade-in${i}`;
-        item.style.cursor = "pointer";
         i++;
     });
+    setTimeout(() => {
+        images.forEach((item) => {
+            item.style.cursor = "pointer";
+        });
+    }, 6000);
+    setTimeout(addOnClick, 6100);
 }
 function handleCard(item) {
     if (listen) {
         listen = false;
+        images.forEach((item) => {
+            item.style.cursor = "default";
+        });
         item.style.animationDelay = "0s";
         item.style.animationName = "slide-out";
         setTimeout(() => {
@@ -23,7 +36,9 @@ function handleCard(item) {
         }, 500);
     }
 }
-startBtn.addEventListener("click", startApp);
-images.forEach((item) => {
-    item.addEventListener("click", () => handleCard(item));
-});
+function addOnClick() {
+    images.forEach((item) => {
+        item.addEventListener("click", () => handleCard(item));
+    });
+}
+startBtn.addEventListener("click", startApp /*runner*/);

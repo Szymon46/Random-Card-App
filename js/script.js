@@ -22,7 +22,7 @@ function startApp() {
     }, 6000);
     setTimeout(addOnClick, 6100);
 }
-function handleCard(image) {
+function handleCardOnClick(image) {
     if (isClicked) {
         isClicked = false;
         images.forEach((image) => {
@@ -38,7 +38,7 @@ function handleCard(image) {
 }
 function addOnClick() {
     images.forEach((image) => {
-        image.addEventListener("click", () => handleCard(image));
+        image.addEventListener("click", () => handleCardOnClick(image));
     });
 }
 startBtn.addEventListener("click", startApp);

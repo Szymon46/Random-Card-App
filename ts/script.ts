@@ -28,7 +28,7 @@ function startApp(): void {
   setTimeout(addOnClick, 6100);
 }
 
-function handleCard(image: HTMLImageElement): void {
+function handleCardOnClick(image: HTMLImageElement): void {
   if (isClicked) {
     isClicked = false;
 
@@ -51,7 +51,7 @@ function handleCard(image: HTMLImageElement): void {
 
 function addOnClick(): void {
   images.forEach((image) => {
-    image.addEventListener("click", () => handleCard(image));
+    image.addEventListener("click", () => handleCardOnClick(image));
   });
 }
 

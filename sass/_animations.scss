@@ -78,3 +78,15 @@
     opacity: 1;
   }
 }
+
+@keyframes btn-fade-in {
+  from {
+    opacity: 0;
+    display: block;
+  }
+
+  to {
+    opacity: 1;
+    display: block;
+  }
+}

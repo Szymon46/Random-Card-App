@@ -28,7 +28,7 @@ body {
   position: absolute;
   opacity: 0;
   width: 15%;
-  margin-top: 5px;
+  margin-top: 40px;
   animation-duration: 1s;
   animation-fill-mode: forwards;
 
@@ -70,4 +70,18 @@ body {
   animation-duration: 0.5s;
   animation-fill-mode: forwards;
   cursor: pointer;
+}
+
+.reset-arrow {
+  cursor: pointer;
+  position: absolute;
+  color: #fff;
+  top: 1%;
+  right: 1%;
+  font-size: 20px;
+
+  &:hover {
+    transition: transform 1s;
+    transform: rotateZ(-360deg);
+  }
 }

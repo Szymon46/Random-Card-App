@@ -6,6 +6,7 @@
  */
 const startBtn = document.querySelector(".start-btn");
 const images = document.querySelectorAll(".img");
+const resetBtn = document.querySelector(".reset-arrow");
 let isClicked = true;
 function startApp() {
     let i = 1;
@@ -41,4 +42,18 @@ function addOnClick() {
         image.addEventListener("click", () => handleCardOnClick(image));
     });
 }
+function handleResetOnClick() {
+    isClicked = true;
+    startBtn.style.animationName = "btn-fade-in";
+    let i = 1;
+    images.forEach((image) => {
+        image.style.animationDelay = "";
+        image.style.animationName = "";
+        image.style.cursor = "default";
+        image.setAttribute("src", "./img/tlo.png");
+        image.removeEventListener("click", () => handleCardOnClick(image)); //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        i++;
+    });
+}
 startBtn.addEventListener("click", startApp);
+resetBtn.addEventListener("click", handleResetOnClick);

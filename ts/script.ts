@@ -1,7 +1,6 @@
 /*
  * TODO
  * Do the animation of card flipping when clicked.
- * Make the reset button.
  */
 
 const startBtn: HTMLButtonElement = document.querySelector(".start-btn")!;
@@ -29,7 +28,7 @@ function startApp(): void {
   setTimeout(addOnClick, 6100);
 }
 
-function handleCardOnClick(image: HTMLImageElement): void {
+function handleCardOnClick(e: Event): void {
   if (isClicked) {
     isClicked = false;
 
@@ -37,35 +36,37 @@ function handleCardOnClick(image: HTMLImageElement): void {
       image.style.cursor = "default";
     });
 
-    image.style.animationDelay = "0s";
-    image.style.animationName = "slide-out";
+    const target = e.target as HTMLImageElement;
+
+    target.style.animationDelay = "0s";
+    target.style.animationName = "slide-out";
 
     setTimeout(() => {
-      image.setAttribute(
+      target.setAttribute(
         "src",
         `./img/${Math.floor(Math.random() * 13 + 1)}.png`
       );
-      image.style.animationName = "slide-in";
+      target.style.animationName = "slide-in";
     }, 500);
   }
 }
 
 function addOnClick(): void {
   images.forEach((image) => {
-    image.addEventListener("click", (): void => handleCardOnClick(image));
+    image.addEventListener("click", handleCardOnClick);
   });
 }
 
 function handleResetOnClick(): void {
   isClicked = true;
-  startBtn.style.animationName = "btn-fade-in";
+  startBtn.style.animationName = "";
   let i: number = 1;
   images.forEach((image) => {
     image.style.animationDelay = "";
     image.style.animationName = "";
     image.style.cursor = "default";
     image.setAttribute("src", "./img/tlo.png");
-    image.removeEventListener("click", (): void => handleCardOnClick(image)); //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    image.removeEventListener("click", handleCardOnClick);
     i++;
   });
 }

@@ -2,11 +2,12 @@
 /*
  * TODO
  * Do the animation of card flipping when clicked.
+ * In startApp use promises/async,await instead of setTimeout(, 6100)
  */
 const startBtn = document.querySelector(".start-btn");
 const images = document.querySelectorAll(".img");
 const resetBtn = document.querySelector(".reset-arrow");
-let isClicked = true;
+let isNotClicked = true;
 function startApp() {
     let i = 1;
     startBtn.style.animationName = "fade-out";
@@ -23,8 +24,8 @@ function startApp() {
     setTimeout(addOnClick, 6100);
 }
 function handleCardOnClick(e) {
-    if (isClicked) {
-        isClicked = false;
+    if (isNotClicked) {
+        isNotClicked = false;
         const target = e.target;
         images.forEach((image) => {
             image.style.cursor = "default";
@@ -43,7 +44,7 @@ function addOnClick() {
     });
 }
 function handleResetOnClick() {
-    isClicked = true;
+    isNotClicked = true;
     startBtn.style.animationName = "";
     let i = 1;
     images.forEach((image) => {

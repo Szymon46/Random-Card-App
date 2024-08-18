@@ -1,6 +1,7 @@
 /*
  * TODO
  * Do the animation of card flipping when clicked.
+ * In startApp use promises/async,await instead of setTimeout(, 6100)
  */
 
 const startBtn: HTMLButtonElement = document.querySelector(".start-btn")!;

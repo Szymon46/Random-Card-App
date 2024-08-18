@@ -47,9 +47,11 @@
     left: 50%;
     opacity: 1;
   }
+
   60% {
     opacity: 0;
   }
+
   100% {
     transform: translateX(-50%);
     top: 50%;

@@ -7,7 +7,7 @@ const startBtn: HTMLButtonElement = document.querySelector(".start-btn")!;
 const images: NodeListOf<HTMLImageElement> = document.querySelectorAll(".img");
 const resetBtn: HTMLElement = document.querySelector(".reset-arrow")!;
 
-let isClicked: boolean = true;
+let isNotClicked: boolean = true;
 
 function startApp(): void {
   let i: number = 1;
@@ -29,14 +29,13 @@ function startApp(): void {
 }
 
 function handleCardOnClick(e: Event): void {
-  if (isClicked) {
-    isClicked = false;
+  if (isNotClicked) {
+    isNotClicked = false;
+    const target = e.target as HTMLImageElement;
 
     images.forEach((image) => {
       image.style.cursor = "default";
     });
-
-    const target = e.target as HTMLImageElement;
 
     target.style.animationDelay = "0s";
     target.style.animationName = "slide-out";
@@ -58,7 +57,7 @@ function addOnClick(): void {
 }
 
 function handleResetOnClick(): void {
-  isClicked = true;
+  isNotClicked = true;
   startBtn.style.animationName = "";
   let i: number = 1;
   images.forEach((image) => {

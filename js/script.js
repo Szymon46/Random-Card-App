@@ -25,10 +25,10 @@ function startApp() {
 function handleCardOnClick(e) {
     if (isClicked) {
         isClicked = false;
+        const target = e.target;
         images.forEach((image) => {
             image.style.cursor = "default";
         });
-        const target = e.target;
         target.style.animationDelay = "0s";
         target.style.animationName = "slide-out";
         setTimeout(() => {
